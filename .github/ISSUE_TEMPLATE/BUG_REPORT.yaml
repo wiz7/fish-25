@@ -1,0 +1,64 @@
+name: 버그 리포트
+description: 문제 개선에 도움이 되는 리포트 작성
+title: ":bug: "
+labels: [ "버그" ]
+assignees:
+  - shirohoo
+  - gunkim
+  - Junnyjun
+body:
+  - type: markdown
+    attributes:
+      value: |
+        귀중한 시간을 내어 이 버그 리포트를 작성해 주셔서 감사합니다.
+  - type: input
+    id: contact
+    attributes:
+      label: 연락처 세부 정보
+      description: 추가 정보가 필요한 경우 어떻게 연락할 수 있나요?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 어떤 문제가 존재하나요?
+      description: 어떤 행동을 했고, 어떤 결과가 일어나길 기대했나요?
+      placeholder: 예상한 것과 다른 결과가 나타났나요?
+      value: "발생한 문제에 대해 설명해주세요."
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: 버전
+      description: 문제가 발생한 아티팩트의 버전을 선택해주세요
+      options:
+        - v0.0.1
+        - v0.0.2
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 어떤 브라우저에서 문제가 발생했나요?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: 관련 로그
+      description: 관련 로그 출력을 복사하여 추가해주세요. 이곳은 자동으로 코드 형식이 지정되므로 백틱이 필요하지 않습니다.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 기여자 행동 강령
+      description: 이 문제를 제출하면 [기여자 행동 강령](https://github.com/telos-projects/fish-25/blob/main/docs/CODE_OF_CONDUCT.adoc)을 준수하는 데 동의하는 것으로 간주합니다.
+      options:
+        - label: 나는 이 프로젝트의 행동 강령을 따를 것에 동의합니다
+          required: true

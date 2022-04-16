@@ -1,0 +1,52 @@
+name: 할일 리포트
+description: 앞으로 해야할 이슈를 생성합니다
+title: ":asterisk: "
+labels: [ "공통","할일" ]
+assignees:
+  - shirohoo
+  - gunkim
+  - Junnyjun
+body:
+  - type: markdown
+    attributes:
+      value: |
+        할일 목록을 작성해 주셔서 감사합니다.
+  - type: input
+    id: contact
+    attributes:
+      label: 연락처 세부 정보
+      description: 추가 정보가 필요한 경우 어떻게 연락할 수 있나요?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 어떤 기능 & 수정사항이 발생했나요?
+      description: 어떻게 만들 어떤 결과가 일어나길 기대했나요?
+      placeholder: 결과가 도출되나요?
+      value: "#### 💭 제목을 입력해 주세요  \n
+      > 🐬 부제 1\n 
+      \n
+      해야할일 작성"
+    validations:
+      required: true
+  - type: dropdown
+    id: position
+    attributes:
+      label: 어떤 포지션에서 발생한 제안인가요?
+      multiple: true
+      options:
+        - FRONTEND
+        - BACKEND
+        - INFRA
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 기여자 행동 강령
+      description: 이 문제를 제출하면 [기여자 행동 강령](https://github.com/telos-projects/fish-25/blob/main/docs/CODE_OF_CONDUCT.adoc)을 준수하는 데 동의하는 것으로 간주합니다.
+      options:
+        - label: 나는 이 프로젝트의 행동 강령을 따를 것에 동의합니다
+          required: true
